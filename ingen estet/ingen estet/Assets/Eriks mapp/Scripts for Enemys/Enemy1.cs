@@ -15,6 +15,7 @@ public class Enemy1 : MonoBehaviour
     {
         //hämta spelaren och spara i targ
         targ = GameObject.FindGameObjectWithTag("Player");
+        RandomEnemy.AmountOfEnemys++;
     
         
     }
@@ -33,12 +34,13 @@ public class Enemy1 : MonoBehaviour
         //   GameObject.Find("player").GetComponent<Movement>().speed = 4;
 
         if (EnemyHealth <= 0)
-        { Destroy(gameObject);
+        {
+            RandomEnemy.AmountOfEnemys--;
+            Destroy(gameObject);
             print("Enemy Killed");
-
         }
 
-        print(EnemyHealth);
+        //print(EnemyHealth);
 
         
         

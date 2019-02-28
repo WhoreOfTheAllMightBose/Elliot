@@ -28,6 +28,7 @@ public class CreatRoom2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         id++;
         #region fungerar
 
@@ -48,10 +49,33 @@ public class CreatRoom2 : MonoBehaviour
         RaycastHit hitL;
         RaycastHit hitD;
 
+        //RaycastHit2D hitU2d = Physics2D.Raycast(transform.position, new Vector2(0, 1),2);
+        //RaycastHit2D hitR2d = Physics2D.Raycast(transform.position, new Vector2(1, 0),2);
+        //RaycastHit2D hitL2d = Physics2D.Raycast(transform.position, new Vector2(-1, 0),2);
+        //RaycastHit2D hitD2d = Physics2D.Raycast(transform.position, new Vector2(0, -1),2);
+
+        //if(hitD2d != null)
+        //{
+        //    Debug.Log(hitU2d.rigidbody.gameObject.name);
+        //}
+        //if (hitR2d != null)
+        //{
+        //    Debug.Log(hitU2d.rigidbody.gameObject.name);
+        //}
+        //if (hitL2d != null)
+        //{
+        //    Debug.Log(hitU2d.rigidbody.gameObject.name);
+        //}
+        //if (hitD2d != null)
+        //{
+        //    Debug.Log(hitU2d.rigidbody.gameObject.name);
+        //}
+
+
         #endregion
         if (amount < AmountOfRooms)
-        { 
-        
+        {
+
             if (!Physics.Raycast(rayU, out hitU, length))
             {
                 dirOfPrint.Add(Vector3.up);
@@ -84,40 +108,42 @@ public class CreatRoom2 : MonoBehaviour
 
                 roomType(j, dirOfPrint[j]);
 
-                if(amount >= AmountOfRooms && j == dirOfPrint.Count-1)
+                if (amount >= AmountOfRooms && j == dirOfPrint.Count - 1)
                     gointToPrint[amount].GetComponent<Renderer>().material.color = Color.red;
 
             }
 
+            //}
+
+            //    else if(amount >= AmountOfRooms)
+            //    {
+            //        // gointToPrint[amount].GetComponent<Renderer>().material.color = Color.red;
+
+            //        for (int i = 0; i < amount; i++)
+            //        {
+            //           // print(gointToPrint[i]);
+            //            if (!Physics.Raycast(rayU, out hitU, length))
+            //            {
+            //                gointToPrint[i].transform.GetChild(1).gameObject.SetActive(true);
+            //            }
+
+            //            if (!Physics.Raycast(rayD, out hitD, length))
+            //            {
+            //                gointToPrint[i].transform.GetChild(3).gameObject.SetActive(true);
+            //            }
+
+            //            if (!Physics.Raycast(rayR, out hitR, length))
+            //            {
+            //                gointToPrint[i].transform.GetChild(0).gameObject.SetActive(true);
+            //            }
+
+            //            if (!Physics.Raycast(rayL, out hitL, length))
+            //            {
+            //                gointToPrint[i].transform.GetChild(2).gameObject.SetActive(true);
+            //            }
+            //        }
+            //    }
         }
-        //    else if(amount >= AmountOfRooms)
-        //    {
-        //        // gointToPrint[amount].GetComponent<Renderer>().material.color = Color.red;
-
-        //        for (int i = 0; i < amount; i++)
-        //        {
-        //           // print(gointToPrint[i]);
-        //            if (!Physics.Raycast(rayU, out hitU, length))
-        //            {
-        //                gointToPrint[i].transform.GetChild(1).gameObject.SetActive(true);
-        //            }
-
-        //            if (!Physics.Raycast(rayD, out hitD, length))
-        //            {
-        //                gointToPrint[i].transform.GetChild(3).gameObject.SetActive(true);
-        //            }
-
-        //            if (!Physics.Raycast(rayR, out hitR, length))
-        //            {
-        //                gointToPrint[i].transform.GetChild(0).gameObject.SetActive(true);
-        //            }
-
-        //            if (!Physics.Raycast(rayL, out hitL, length))
-        //            {
-        //                gointToPrint[i].transform.GetChild(2).gameObject.SetActive(true);
-        //            }
-        //        }
-        //    }
     }
 
     /// <summary>

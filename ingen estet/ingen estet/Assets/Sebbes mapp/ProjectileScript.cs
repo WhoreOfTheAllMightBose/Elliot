@@ -23,16 +23,16 @@ public class ProjectileScript : MonoBehaviour {
     void Start()
     {
         
-        GetComponent<Rigidbody2D>().AddForce(transform.forward * speed);
+        GetComponent<Rigidbody>().AddForce(transform.forward * speed);
         //direction = transform.forward;
 
 
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        Destroy(this.gameObject);
         if (collision.gameObject.tag == "Structure")
         {
             //Vector3 test1 = new Vector3(transform.forward.x, 0, transform.forward.z);
@@ -66,7 +66,38 @@ public class ProjectileScript : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
+        print(other.name);
+        Destroy(this.gameObject);
+        if (other.gameObject.tag == "Structure")
+        {
+            //Vector3 test1 = new Vector3(transform.forward.x, 0, transform.forward.z);
+            //// Vector3 test2 = new Vector3(-transform.forward.x, 0, transform.forward.z);
 
+
+            ////direction.z += -1;
+            ////direction.x += -1;
+
+            //float A = 1 / Mathf.Tan(test1.z / test1.x);
+
+
+
+            ////Vector3 test2 = new Vector3(transform.forward.x - A, 0, transform.forward.z - A);
+
+            ////test1.z = Mathf.Cos(-A);
+            ////test1.x = Mathf.Sin(-A);
+
+
+            ////if (transform.forward.x < transform.forward.z)
+            ////{
+            ////    GetComponent<Rigidbody>().AddForce(test2 * speed);
+            ////}
+
+            ////  if (transform.forward.z < transform.forward.x)
+
+            //GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+
+
+        }
 
     }
 

@@ -53,6 +53,6 @@ public class HiveScript : MonoBehaviour {
         }
         }
 
-        print(EnemyHealth);
+      //  print(EnemyHealth);
     }
 }

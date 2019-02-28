@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviour {
     public float jump;
     float Horizontal;
     float Vertical;
-    float BulletCd = 30;
+    float BulletCd = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -100,7 +100,7 @@ public class PlayerScript : MonoBehaviour {
             GameObject bullet = Instantiate(Projectile, shooter.position + (transform.forward * ScaleChange), transform.rotation);
             bullet.transform.localScale = new Vector3(ScaleChange, ScaleChange, ScaleChange);
             bullet.GetComponent<ProjectileScript>().Direction = new Vector2(Horizontal, Vertical);
-            BulletCd = 30;
+            BulletCd = 5;
         }
 
 
