@@ -13,6 +13,7 @@ public class CreatRoom2 : MonoBehaviour
     public int AmountOfRooms;
 
     public GameObject Floor;
+    public GameObject FirstFloor;
 
     int rand;
     //public List<GameObject> Down = new List<GameObject>();
@@ -113,37 +114,17 @@ public class CreatRoom2 : MonoBehaviour
 
             }
 
-            //}
-
-            //    else if(amount >= AmountOfRooms)
-            //    {
-            //        // gointToPrint[amount].GetComponent<Renderer>().material.color = Color.red;
-
-            //        for (int i = 0; i < amount; i++)
-            //        {
-            //           // print(gointToPrint[i]);
-            //            if (!Physics.Raycast(rayU, out hitU, length))
-            //            {
-            //                gointToPrint[i].transform.GetChild(1).gameObject.SetActive(true);
-            //            }
-
-            //            if (!Physics.Raycast(rayD, out hitD, length))
-            //            {
-            //                gointToPrint[i].transform.GetChild(3).gameObject.SetActive(true);
-            //            }
-
-            //            if (!Physics.Raycast(rayR, out hitR, length))
-            //            {
-            //                gointToPrint[i].transform.GetChild(0).gameObject.SetActive(true);
-            //            }
-
-            //            if (!Physics.Raycast(rayL, out hitL, length))
-            //            {
-            //                gointToPrint[i].transform.GetChild(2).gameObject.SetActive(true);
-            //            }
-            //        }
-            //    }
         }
+    }
+
+    public void Restart()
+    {
+        for (int i = 0; i < dirOfPrint.Count; i++)
+        {
+            Destroy(gointToPrint[i]);
+        }
+
+        Instantiate(FirstFloor, GameObject.Find("Player").transform.position, Quaternion.identity);
     }
 
     /// <summary>

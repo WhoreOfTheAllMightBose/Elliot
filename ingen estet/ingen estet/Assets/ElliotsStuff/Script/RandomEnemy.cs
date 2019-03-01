@@ -15,8 +15,9 @@ public class RandomEnemy : MonoBehaviour
     int randomAmount;
     int spawnrangeX;
     int spawnrangeY;
+    bool firstTime = true;
 
-    public static int AmountOfEnemys;
+    public static int AmountOfEnemys = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,14 +29,18 @@ public class RandomEnemy : MonoBehaviour
     void Update()
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
-
-        timer += Time.deltaTime;
-
-        if(distance < Distance && timer > 2 && AmountOfEnemys < 15)
+        if(distance < Distance && AmountOfEnemys < 10)
         {
-            spawnLaiter();
-            timer = 0;
+            timer += Time.deltaTime * AmountOfEnemys;
+
+            if (timer > 5 || firstTime)
+            {
+                firstTime = false;
+                spawnLaiter();
+                timer = 0;
+            }
         }
+      
     }
 
     void StartSpawner()
@@ -45,17 +50,16 @@ public class RandomEnemy : MonoBehaviour
 
         for (int i = 0; i < randomAmount; i++)
         {
-            Instantiate(Enemys[randEnemy], this.transform.position, Quaternion.identity);
+            Instantiate(Enemys[randEnemy], transform.position, Quaternion.identity);
         }
-
     }
 
 
     void spawnLaiter()
     {
         randEnemy = Random.Range(0, Enemys.Length);
-        spawnrangeX = Random.Range(-10, 10);
-        spawnrangeY = Random.Range(-10, 10);
+        spawnrangeX = Random.Range(-8, 8);
+        spawnrangeY = Random.Range(-8, 8);
         Vector3 spawnpoint = new Vector3(transform.position.x + spawnrangeX, transform.position.y + spawnrangeY, 0);
 
         if (Enemys[randEnemy].name != "Spawner")
@@ -67,6 +71,8 @@ public class RandomEnemy : MonoBehaviour
         {
             Instantiate(Enemys[randEnemy],spawnpoint, Quaternion.identity);
         }
+
+        AmountOfEnemys++;
 
     }
 }

@@ -14,6 +14,7 @@ public class PlayerScript : MonoBehaviour {
     float Horizontal;
     float Vertical;
     float BulletCd = 5;
+    int health = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +22,7 @@ public class PlayerScript : MonoBehaviour {
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "PowerUp")
         {
@@ -34,6 +35,10 @@ public class PlayerScript : MonoBehaviour {
             Destroy(other.gameObject);
         }
 
+        if (other.gameObject.tag == "Enemy")
+            health--;
+
+        print(health);
     }
 
     // Update is called once per frame

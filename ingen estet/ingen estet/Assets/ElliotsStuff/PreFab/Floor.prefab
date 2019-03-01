@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   length: 20
-  AmountOfRooms: 20
+  AmountOfRooms: 100
   Floor: {fileID: 2417578970845464212}
 --- !u!114 &5251691444603116094
 MonoBehaviour:
@@ -489,6 +489,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemys:
-  - {fileID: 1017888453391992, guid: ae736df879695214dba7e88d4b3f6a0a, type: 3}
+  - {fileID: 1557168779497166, guid: ed8534bd2f4c3424eb486397a279c7ae, type: 3}
   - {fileID: 1017888453391992, guid: ae736df879695214dba7e88d4b3f6a0a, type: 3}
   Distance: 10

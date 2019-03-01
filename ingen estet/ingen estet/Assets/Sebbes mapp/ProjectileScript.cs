@@ -7,6 +7,7 @@ public class ProjectileScript : MonoBehaviour {
     Vector3 direction;
     Vector3 position;
     public float speed;
+    public int bulletDamage = 10;
 
 
     public Vector2 Direction
@@ -33,6 +34,7 @@ public class ProjectileScript : MonoBehaviour {
     private void OnCollisionEnter(Collision collision)
     {
         Destroy(this.gameObject);
+
         if (collision.gameObject.tag == "Structure")
         {
             //Vector3 test1 = new Vector3(transform.forward.x, 0, transform.forward.z);
@@ -67,7 +69,18 @@ public class ProjectileScript : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         print(other.name);
-        Destroy(this.gameObject);
+
+        //if (other.gameObject.name == "Cruck(Clone)")
+        //{
+        //    GetComponent<Enemy1>().TakeDamage(bulletDamage);
+        //}
+
+        //if (other.gameObject.name == "Spawner(Clone)")
+        //{
+        //    GetComponent<HiveScript>().TakeDamage(bulletDamage);
+        //}
+
+        Destroy(gameObject);
         if (other.gameObject.tag == "Structure")
         {
             //Vector3 test1 = new Vector3(transform.forward.x, 0, transform.forward.z);

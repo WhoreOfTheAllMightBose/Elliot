@@ -11,7 +11,13 @@ public class HiveScript : MonoBehaviour {
 
 	}
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void TakeDamage(int dmg)
+    {
+        EnemyHealth -= dmg;
+
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Projectile")
         {

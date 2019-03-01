@@ -37,7 +37,7 @@ public class InventoryScript : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision) // var 2D nyss innan Elliot var här
     {
         Pickup(collision.gameObject);
     }
@@ -47,7 +47,7 @@ public class InventoryScript : MonoBehaviour
         
         if(obj.tag == "BodyPart")
         {
-            obj.GetComponent<BoxCollider2D>().enabled = false;
+            obj.GetComponent<BoxCollider>().enabled = false; //BoxCOllider2D
             PickupBodypart(obj);
         }
 

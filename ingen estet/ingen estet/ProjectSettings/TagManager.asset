@@ -7,6 +7,11 @@ TagManager:
   - Wall
   - Floor
   - Projectile
+  - Enemy
+  - Power
+  - Bullet
+  - BodyPart
+  - Music
   layers:
   - Default
   - TransparentFX
@@ -19,7 +24,7 @@ TagManager:
   - Player
   - Bullet
   - Wall
-  - 
+  - Enemy
   - 
   - 
   - 

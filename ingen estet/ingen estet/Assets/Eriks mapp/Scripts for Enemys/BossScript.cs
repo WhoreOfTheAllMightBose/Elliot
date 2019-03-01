@@ -7,6 +7,8 @@ public class BossScript : MonoBehaviour {
     public GameObject Bullet;
     public GameObject targ; //the enemy's target
     public int Numberofbullets = 0;
+
+    int EnemyHealth;
     // Use this for initialization
     GameObject[] bullets = new GameObject[10];
 
@@ -15,6 +17,18 @@ public class BossScript : MonoBehaviour {
         targ = GameObject.FindGameObjectWithTag("Player");
        // Bullet = GameObject.FindGameObjectWithTag("Bullet");
 
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Projectile")
+        {
+            print(other.gameObject.name);
+            EnemyHealth--;
+            //EnemyHealth -= GetComponent<ProjectileScript>().bulletDamage;
+
+        }
     }
 
     // Update is called once per frame
