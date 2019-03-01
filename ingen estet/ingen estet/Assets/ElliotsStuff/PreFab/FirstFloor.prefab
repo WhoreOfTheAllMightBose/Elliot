@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2027231739406142953}
   m_Layer: 0
   m_Name: FirstFloor
-  m_TagString: Floor
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   length: 20
+  Restarter: 0
   AmountOfRooms: 100
   Floor: {fileID: 2417578970845464212, guid: b83f134bde9f16d40bd24331282b884f, type: 3}
   FirstFloor: {fileID: 2027231739406142959}

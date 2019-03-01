@@ -6,7 +6,7 @@ using UnityEngine;
 public class CreatRoom2 : MonoBehaviour
 {
     public float length ;
-
+    public bool Restarter;
     static int id;
 
     static int amount = 0;
@@ -117,14 +117,28 @@ public class CreatRoom2 : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Restarter)
+            Restart();
+    }
+
     public void Restart()
     {
-        for (int i = 0; i < dirOfPrint.Count; i++)
+        GameObject[] floors = GameObject.FindGameObjectsWithTag("Floor");
+
+        for (int i = 0; i < floors.Length; i++)
         {
-            Destroy(gointToPrint[i]);
+            Destroy(floors[i]);
+            Restarter = false;
         }
 
-        Instantiate(FirstFloor, GameObject.Find("Player").transform.position, Quaternion.identity);
+        Vector3 playerPos = GameObject.Find("Player").transform.position;
+
+        Instantiate(FirstFloor,new Vector3(playerPos.x, playerPos.y, 0.5f), Quaternion.identity);
+
+        this.gameObject.SetActive(false);
+
     }
 
     /// <summary>

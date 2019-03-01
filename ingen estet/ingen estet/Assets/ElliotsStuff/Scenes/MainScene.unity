@@ -1185,6 +1185,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FirstFloor
       objectReference: {fileID: 0}
+    - target: {fileID: 2027231739406142959, guid: c94f89343ae09714b91edbb35dcbb24b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 2027231739406142954, guid: c94f89343ae09714b91edbb35dcbb24b,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -19,7 +19,7 @@ public class SpawnBoss : MonoBehaviour
     void Update()
     {
         dis = Vector3.Distance(transform.position,player.transform.position);
-        if (Enemy1.Kills > 2 && dis > 3 && !BossIsAcctive)
+        if (Enemy1.Kills > 20 && dis > 30 && !BossIsAcctive)
         {
             Instantiate(Boss);
             BossIsAcctive = true;

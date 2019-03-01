@@ -34,7 +34,10 @@ public class BossScript : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-
+        if(EnemyHealth <= 0)
+        {
+            GetComponent<CreatRoom2>().Restart();
+        }
         Timer += Time.deltaTime;
 
         if (Numberofbullets == bullets.Length)
